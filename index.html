@@ -16,9 +16,7 @@
     --sky: #2b6cb0;
     --muted: #7a6a50;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--aged);
     color: var(--ink);
@@ -29,211 +27,61 @@
       radial-gradient(ellipse at 10% 20%, rgba(196,65,12,0.06) 0%, transparent 50%),
       radial-gradient(ellipse at 90% 80%, rgba(45,90,39,0.07) 0%, transparent 50%);
   }
-
   .page { max-width: 720px; margin: 0 auto; padding: 0 1rem; }
 
-  /* ── MASTHEAD ── */
-  .masthead {
-    border-top: 4px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
-    padding: 1.5rem 1rem 1rem;
-    text-align: center;
-  }
-  .masthead-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.4rem;
-  }
-  .masthead h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(3rem, 10vw, 5.5rem);
-    font-weight: 800;
-    line-height: 0.9;
-    letter-spacing: -0.03em;
-  }
+  /* MASTHEAD */
+  .masthead { border-top: 4px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 1.5rem 1rem 1rem; text-align: center; }
+  .masthead-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .masthead h1 { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; line-height: 0.9; letter-spacing: -0.03em; }
   .masthead h1 span { color: var(--rust); }
-  .masthead-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.5rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-  }
+  .masthead-sub { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; }
   .sep { color: var(--gold); }
 
-  /* ── NAV ── */
-  .nav-ribbon {
-    display: flex;
-    border-bottom: 2px solid var(--ink);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
+  /* NAV */
+  .nav-ribbon { display: flex; border-bottom: 2px solid var(--ink); overflow-x: auto; scrollbar-width: none; }
   .nav-ribbon::-webkit-scrollbar { display: none; }
-  .nav-item {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.48rem 0.9rem;
-    border-right: 1px solid var(--ink);
-    white-space: nowrap;
-    color: var(--muted);
-    flex-shrink: 0;
-  }
+  .nav-item { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.48rem 0.9rem; border-right: 1px solid var(--ink); white-space: nowrap; color: var(--muted); flex-shrink: 0; }
 
-  /* ── API KEY GATE ── */
-  #gate {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 55vh;
-    gap: 1rem;
-    text-align: center;
-    padding: 2rem 0;
-  }
-  .gate-title {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-  }
-  .gate-sub {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    max-width: 340px;
-    line-height: 1.8;
-  }
-  .gate-sub a { color: var(--sky); }
-  .key-row {
-    display: flex;
-    gap: 0;
-    width: 100%;
-    max-width: 420px;
-  }
-  .key-input {
-    flex: 1;
-    background: var(--cream);
-    border: 2px solid var(--ink);
-    border-right: none;
-    padding: 0.7rem 1rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--ink);
-    outline: none;
-  }
+  /* GENERATE BAR */
+  .gen-bar { border-bottom: 2px solid var(--ink); display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.6rem 1rem; flex-wrap: wrap; background: var(--cream); }
+  .gen-info { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .gen-btn { background: var(--ink); color: var(--cream); border: none; font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.65rem 1.5rem; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
+  .gen-btn:hover { background: var(--rust); }
+  .gen-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  /* GATE */
+  #gate { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 55vh; gap: 1.1rem; text-align: center; padding: 2rem 0; }
+  .gate-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; }
+  .gate-sub { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); max-width: 360px; line-height: 1.9; }
+  .gate-steps { background: var(--cream); border: 2px solid var(--ink); padding: 1.1rem 1.4rem; max-width: 400px; width: 100%; text-align: left; }
+  .gate-steps-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .gate-steps ol { padding-left: 1.2rem; font-size: 0.83rem; line-height: 2.1; color: #3a2e1e; }
+  .gate-steps ol a { color: var(--sky); }
+  .key-row { display: flex; width: 100%; max-width: 420px; }
+  .key-input { flex: 1; background: var(--cream); border: 2px solid var(--ink); border-right: none; padding: 0.7rem 1rem; font-family: 'DM Mono', monospace; font-size: 0.76rem; color: var(--ink); outline: none; }
   .key-input::placeholder { color: var(--muted); opacity: 0.7; }
-  .key-btn {
-    background: var(--ink);
-    color: var(--cream);
-    border: 2px solid var(--ink);
-    padding: 0.7rem 1.2rem;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
+  .key-btn { background: var(--ink); color: var(--cream); border: 2px solid var(--ink); padding: 0.7rem 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.15s; white-space: nowrap; }
   .key-btn:hover { background: var(--rust); border-color: var(--rust); }
-  .gate-note {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    max-width: 380px;
-    line-height: 1.7;
-  }
-  .gate-error {
-    color: var(--rust);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    min-height: 1.2em;
-  }
+  .gate-note { font-family: 'DM Mono', monospace; font-size: 0.57rem; color: var(--muted); letter-spacing: 0.09em; max-width: 380px; line-height: 1.8; }
+  .gate-error { color: var(--rust); font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.1em; min-height: 1.2em; }
 
-  /* ── LOADING ── */
-  #loading {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 55vh;
-    gap: 1rem;
-    text-align: center;
-  }
-  .loading-logo {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.4rem;
-    font-weight: 800;
-  }
+  /* LOADING */
+  #loading { display: none; flex-direction: column; align-items: center; justify-content: center; min-height: 55vh; gap: 1rem; text-align: center; }
+  .loading-logo { font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800; }
   .loading-logo span { color: var(--rust); }
-  .loading-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .bar-bg {
-    width: 200px;
-    height: 3px;
-    background: rgba(26,18,6,0.15);
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .bar-fill {
-    height: 100%;
-    background: var(--gold);
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.5s ease;
-  }
-  .loading-msg {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    min-height: 1.2em;
-  }
+  .loading-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .bar-bg { width: 200px; height: 3px; background: rgba(26,18,6,0.15); border-radius: 2px; overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--gold); border-radius: 2px; width: 0%; transition: width 0.5s ease; }
+  .loading-msg { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); min-height: 1.2em; }
 
-  /* ── CONTENT ── */
+  /* CONTENT */
   #content { display: none; animation: fadeUp 0.5s ease both; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 
-  .section {
-    border-bottom: 1px solid rgba(26,18,6,0.2);
-    padding: 2rem 0;
-  }
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.57rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-  }
+  .section { border-bottom: 1px solid rgba(26,18,6,0.2); padding: 2rem 0; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.55rem; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(26,18,6,0.18); }
 
-  /* WORD */
   .wod-card { background: var(--ink); color: var(--cream); padding: 2rem; position: relative; overflow: hidden; }
   .wod-card::before { content: '🌿'; position: absolute; font-size: 6rem; right: -10px; top: -14px; opacity: 0.1; transform: rotate(15deg); }
   .wod-word { font-family: 'Syne', sans-serif; font-size: clamp(2.2rem, 7vw, 3.6rem); font-weight: 800; color: var(--gold); line-height: 1; margin-bottom: 0.25rem; }
@@ -243,7 +91,6 @@
   .wod-ex { border-left: 3px solid var(--rust); padding-left: 0.9rem; font-style: italic; font-size: 0.9rem; color: rgba(245,237,216,0.82); line-height: 1.6; }
   .wod-tr { margin-top: 0.3rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: rgba(245,237,216,0.4); }
 
-  /* GRAMMAR */
   .grammar-box { background: var(--cream); border: 2px solid var(--ink); padding: 1.3rem 1.5rem; }
   .grammar-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.45rem; }
   .grammar-rule { font-size: 0.9rem; line-height: 1.75; color: #3a2e1e; }
@@ -253,7 +100,6 @@
   .es-ex { font-style: italic; color: var(--forest); font-weight: bold; }
   .en-ex { color: var(--muted); }
 
-  /* MUSIC */
   .music-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 1.3rem; align-items: start; }
   @media(max-width:520px){ .music-grid { grid-template-columns: 1fr; } }
   .music-hed { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.45rem; }
@@ -267,7 +113,6 @@
   .s-blurb:last-child { margin-bottom: 0; }
   .sdiv { border: none; border-top: 1px solid rgba(245,237,216,0.22); margin: 0.6rem 0; }
 
-  /* SCIENCE */
   .map-card { border: 2px solid var(--sky); padding: 1.4rem; position: relative; overflow: hidden; }
   .map-card::after { content: '🗺️'; position: absolute; font-size: 4.5rem; right: -4px; bottom: -8px; opacity: 0.08; transform: rotate(-10deg); }
   .map-hed { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--sky); margin-bottom: 0.45rem; line-height: 1.2; }
@@ -277,7 +122,6 @@
   .map-vocab-list { display: flex; flex-wrap: wrap; gap: 0.3rem; font-size: 0.83rem; }
   .map-vocab-list strong { font-style: normal; color: var(--sky); font-family: 'DM Mono', monospace; font-size: 0.77rem; }
 
-  /* GAMES */
   .game-card { background: var(--forest); color: var(--cream); padding: 1.5rem; position: relative; overflow: hidden; }
   .game-card::before { content: '🎮'; position: absolute; font-size: 4.5rem; right: 10px; top: 10px; opacity: 0.1; }
   .game-hed { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
@@ -289,7 +133,6 @@
   .phrase-es { font-style: italic; color: #a8e6a3; }
   .phrase-en { font-family: 'DM Mono', monospace; font-size: 0.7rem; opacity: 0.55; }
 
-  /* QUIZ */
   .quiz-wrap { background: var(--gold); padding: 1.4rem; }
   .quiz-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--ink); margin-bottom: 0.85rem; }
   .quiz-q { font-size: 0.93rem; color: var(--ink); margin-bottom: 0.85rem; line-height: 1.55; }
@@ -301,45 +144,14 @@
   .quiz-btn.wrong { background: var(--rust); color: var(--cream); border-color: var(--rust); cursor: default; }
   .quiz-fb { margin-top: 0.75rem; font-size: 0.88rem; font-style: italic; color: var(--ink); min-height: 1.2em; line-height: 1.55; }
 
-  /* TEASER */
   .teaser { padding: 1rem 0 0.5rem; font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
-
-  /* GENERATE BAR */
-  .gen-bar {
-    border-top: 2px solid var(--ink);
-    border-bottom: 2px solid var(--ink);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding: 0.6rem 1rem;
-    flex-wrap: wrap;
-  }
-  .gen-info { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-  .gen-btn {
-    background: var(--ink);
-    color: var(--cream);
-    border: none;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 0.65rem 1.5rem;
-    cursor: pointer;
-    transition: background 0.15s;
-    white-space: nowrap;
-  }
-  .gen-btn:hover { background: var(--rust); }
-  .gen-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-
-  /* FOOTER */
   .footer { padding-top: 1.3rem; text-align: center; font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
   .footer-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 0.25rem; }
+  .badge { display: inline-block; background: var(--forest); color: var(--cream); font-family: 'DM Mono', monospace; font-size: 0.5rem; padding: 0.12rem 0.35rem; letter-spacing: 0.1em; vertical-align: middle; margin-left: 0.3rem; }
 </style>
 </head>
 <body>
 
-<!-- MASTHEAD (always visible) -->
 <header class="masthead">
   <div class="masthead-eyebrow">Your Daily Spanish Dispatch</div>
   <h1>El <span>Diario</span></h1>
@@ -361,33 +173,40 @@
   <div class="nav-item">✏️ Quiz</div>
 </nav>
 
-<!-- GENERATE BAR -->
 <div class="gen-bar">
-  <span class="gen-info" id="gen-info">Enter your API key to begin</span>
+  <span class="gen-info" id="gen-info">Enter your free Gemini API key to begin</span>
   <button class="gen-btn" id="gen-btn" onclick="handleGenerate()">↻ Generate Today's Edition</button>
 </div>
 
 <div class="page">
 
-  <!-- API KEY GATE -->
   <div id="gate">
     <div class="gate-title">Buenos días. ☀️</div>
     <div class="gate-sub">
-      Paste your Anthropic API key to generate today's fresh edition.<br>
-      Your key stays in your browser — never sent anywhere but Anthropic.
+      Powered by Google Gemini — completely free.<br>
+      Get your key in 60 seconds, paste it once, saved forever.
+    </div>
+    <div class="gate-steps">
+      <div class="gate-steps-title">How to get your free key:</div>
+      <ol>
+        <li>Go to <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com/app/apikey</a></li>
+        <li>Sign in with your Google account</li>
+        <li>Click <strong>"Create API Key"</strong></li>
+        <li>Copy it and paste below</li>
+      </ol>
     </div>
     <div class="key-row">
-      <input class="key-input" id="api-key" type="password" placeholder="sk-ant-api03-..." autocomplete="off" onkeydown="if(event.key==='Enter')handleGenerate()" />
+      <input class="key-input" id="api-key" type="password" placeholder="AIzaSy..." autocomplete="off"
+        onkeydown="if(event.key==='Enter')handleGenerate()" />
       <button class="key-btn" onclick="handleGenerate()">Generate →</button>
     </div>
     <div class="gate-note">
-      Get a free key at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a><br>
-      Your key is saved locally so you only need to enter it once.
+      Saved to your browser — enter once, never again.<br>
+      Free tier: 1,500 requests/day · No credit card required.
     </div>
     <div class="gate-error" id="gate-error"></div>
   </div>
 
-  <!-- LOADING -->
   <div id="loading">
     <div class="loading-logo">El <span>Diario</span></div>
     <div class="loading-label">Generating today's edition</div>
@@ -395,42 +214,40 @@
     <div class="loading-msg" id="loading-msg">Connecting…</div>
   </div>
 
-  <!-- NEWSLETTER CONTENT -->
   <div id="content"></div>
 
-</div><!-- /.page -->
+</div>
 
 <script>
 const MSGS = [
-  'Waking up the editor…',
-  'Brewing today\'s word…',
-  'Tuning into Latin radio…',
-  'Charting the science section…',
-  'Loading up the controller…',
-  'Laying out the edition…',
+  "Waking up the editor…",
+  "Brewing today's word…",
+  "Tuning into Latin radio…",
+  "Charting the science section…",
+  "Loading up the controller…",
+  "Laying out the edition…"
 ];
 
 let issueCount = parseInt(localStorage.getItem('eldiario_issue') || '0');
 let quizAnswered = false;
 let quizCorrect = -1;
-let quizFeedbackGood = '';
-let quizFeedbackBad = '';
+let quizFbGood = '';
+let quizFbBad = '';
 
 function todayStr() {
   return new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
 }
 
 function getKey() {
-  const inputKey = document.getElementById('api-key').value.trim();
-  if (inputKey) { localStorage.setItem('eldiario_key', inputKey); return inputKey; }
-  return localStorage.getItem('eldiario_key') || '';
+  const val = (document.getElementById('api-key').value || '').trim();
+  if (val) { localStorage.setItem('eldiario_gemini_key', val); return val; }
+  return localStorage.getItem('eldiario_gemini_key') || '';
 }
 
-// On load: if key already saved, skip gate and auto-generate
 window.addEventListener('DOMContentLoaded', () => {
   document.getElementById('hdr-date').textContent = todayStr();
-  document.getElementById('hdr-issue').textContent = `Issue No. ${String(issueCount + 1).padStart(3,'0')}`;
-  const saved = localStorage.getItem('eldiario_key');
+  document.getElementById('hdr-issue').textContent = 'Issue No. ' + String(issueCount + 1).padStart(3, '0');
+  const saved = localStorage.getItem('eldiario_gemini_key');
   if (saved) {
     document.getElementById('gate').style.display = 'none';
     generate(saved);
@@ -439,7 +256,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 function handleGenerate() {
   const key = getKey();
-  if (!key) { document.getElementById('gate-error').textContent = 'Please enter your API key first.'; return; }
+  if (!key) {
+    document.getElementById('gate-error').textContent = 'Please enter your Gemini API key first.';
+    return;
+  }
   document.getElementById('gate-error').textContent = '';
   document.getElementById('gate').style.display = 'none';
   document.getElementById('content').style.display = 'none';
@@ -453,10 +273,9 @@ async function generate(key) {
   document.getElementById('gen-btn').disabled = true;
   document.getElementById('gen-info').textContent = 'Generating…';
 
-  let pct = 0;
-  let msgIdx = 0;
+  let pct = 0, msgIdx = 0;
   document.getElementById('loading-msg').textContent = MSGS[0];
-  const ticker = setInterval(() => {
+  const ticker = setInterval(function() {
     pct = Math.min(pct + 13, 88);
     document.getElementById('bar').style.width = pct + '%';
     msgIdx = (msgIdx + 1) % MSGS.length;
@@ -464,109 +283,45 @@ async function generate(key) {
   }, 900);
 
   const today = todayStr();
-  const prompt = `You are the editor of "El Diario," a daily Spanish learning newsletter for someone who loves nature, Latin pop culture, science/maps, and video games. Today is ${today}.
-
-Generate a COMPLETE newsletter. Return ONLY valid JSON — no markdown fences, no preamble, no explanation. Schema:
-{
-  "word": {
-    "spanish": "one Spanish word related to nature",
-    "pronunciation": "/ phonetic /",
-    "partOfSpeech": "e.g. noun, feminine",
-    "englishMeaning": "English word",
-    "definition": "2-sentence definition connecting to Latin American nature or culture",
-    "exampleSpanish": "natural example sentence",
-    "exampleEnglish": "English translation"
-  },
-  "grammar": {
-    "title": "Short catchy grammar tip title",
-    "rule": "2-3 sentence explanation. Wrap Spanish forms in backticks.",
-    "examples": [
-      {"es": "Spanish sentence 🌿", "en": "translation"},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."}
-    ]
-  },
-  "music": {
-    "headline": "Latin music news headline with emoji",
-    "body1": "First paragraph with Spanish vocabulary woven in",
-    "body2": "Second paragraph on vocabulary angle",
-    "chips": ["word = meaning", "word = meaning", "word = meaning", "word = meaning"],
-    "spotlights": [
-      {"artist": "Name", "blurb": "2 sentences"},
-      {"artist": "Name", "blurb": "2 sentences"},
-      {"artist": "Name", "blurb": "2 sentences"}
-    ]
-  },
-  "science": {
-    "headline": "Science/geography headline about Latin America with emoji",
-    "body1": "First paragraph",
-    "body2": "Second paragraph connecting to Spanish language",
-    "vocabItems": [
-      {"word": "Spanish term", "meaning": "English"},
-      {"word": "...", "meaning": "..."},
-      {"word": "...", "meaning": "..."},
-      {"word": "...", "meaning": "..."},
-      {"word": "...", "meaning": "..."}
-    ]
-  },
-  "games": {
-    "headline": "Gaming headline or tip with emoji",
-    "body1": "Fun paragraph about learning Spanish through gaming",
-    "body2": "Setup for phrase list",
-    "phrases": [
-      {"es": "Spanish phrase", "en": "translation"},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."},
-      {"es": "...", "en": "..."}
-    ]
-  },
-  "quiz": {
-    "question": "Quiz question about something from today",
-    "options": ["Option A", "Option B", "Option C", "Option D"],
-    "correctIndex": 1,
-    "feedbackCorrect": "Encouraging 1-2 sentence explanation",
-    "feedbackWrong": "Gentle 1-2 sentence correction with answer"
-  },
-  "tomorrowTeaser": "Tomorrow: la X · Artist · Geography · Game vocab"
-}`;
+  const prompt = 'You are the editor of "El Diario," a daily Spanish learning newsletter for someone who loves nature, Latin pop culture, science/maps, and video games. Today is ' + today + '.\n\nGenerate a COMPLETE newsletter. Return ONLY valid JSON with no markdown fences, no preamble, no explanation. Use this exact schema:\n{\n  "word": {\n    "spanish": "one Spanish nature word",\n    "pronunciation": "/ phonetic /",\n    "partOfSpeech": "e.g. noun, feminine",\n    "englishMeaning": "English word",\n    "definition": "2-sentence definition tying to Latin American nature",\n    "exampleSpanish": "example sentence",\n    "exampleEnglish": "translation"\n  },\n  "grammar": {\n    "title": "Short grammar tip title",\n    "rule": "2-3 sentence rule. Wrap Spanish forms in backticks.",\n    "examples": [\n      {"es": "Spanish sentence", "en": "translation"},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."}\n    ]\n  },\n  "music": {\n    "headline": "Latin music headline with emoji",\n    "body1": "Paragraph with Spanish vocab woven in",\n    "body2": "Follow-up paragraph",\n    "chips": ["word = meaning", "word = meaning", "word = meaning", "word = meaning"],\n    "spotlights": [\n      {"artist": "Name", "blurb": "2 sentences"},\n      {"artist": "Name", "blurb": "2 sentences"},\n      {"artist": "Name", "blurb": "2 sentences"}\n    ]\n  },\n  "science": {\n    "headline": "Science/geography headline about Latin America with emoji",\n    "body1": "First paragraph",\n    "body2": "Second paragraph linking to Spanish",\n    "vocabItems": [\n      {"word": "Spanish", "meaning": "English"},\n      {"word": "...", "meaning": "..."},\n      {"word": "...", "meaning": "..."},\n      {"word": "...", "meaning": "..."},\n      {"word": "...", "meaning": "..."}\n    ]\n  },\n  "games": {\n    "headline": "Gaming headline with emoji",\n    "body1": "Fun paragraph about Spanish and gaming",\n    "body2": "Setup sentence for phrases",\n    "phrases": [\n      {"es": "phrase", "en": "translation"},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."},\n      {"es": "...", "en": "..."}\n    ]\n  },\n  "quiz": {\n    "question": "Question about something from today",\n    "options": ["Option A", "Option B", "Option C", "Option D"],\n    "correctIndex": 1,\n    "feedbackCorrect": "Encouraging 1-2 sentence explanation",\n    "feedbackWrong": "Gentle correction with the right answer"\n  },\n  "tomorrowTeaser": "Tomorrow: la X · Artist · Geography · Game vocab"\n}';
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
-      body: JSON.stringify({
-        model: 'claude-opus-4-6',
-        max_tokens: 2000,
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
+    const res = await fetch(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + key,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: { temperature: 0.9, maxOutputTokens: 2500 }
+        })
+      }
+    );
 
     if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.error?.message || `HTTP ${res.status}`);
+      const err = await res.json().catch(function() { return {}; });
+      const msg = (err.error && err.error.message) || ('HTTP ' + res.status);
+      if (res.status === 400 || res.status === 403) throw new Error('INVALID_KEY:' + msg);
+      throw new Error(msg);
     }
 
     const raw = await res.json();
-    const text = raw.content.map(b => b.text || '').join('');
+    const text = (raw.candidates && raw.candidates[0] && raw.candidates[0].content && raw.candidates[0].content.parts && raw.candidates[0].content.parts[0] && raw.candidates[0].content.parts[0].text) || '';
     const clean = text.replace(/```json|```/g, '').trim();
     const d = JSON.parse(clean);
 
     clearInterval(ticker);
     document.getElementById('bar').style.width = '100%';
-    await sleep(300);
+    await new Promise(function(r) { setTimeout(r, 300); });
 
     issueCount++;
-    localStorage.setItem('eldiario_issue', issueCount);
+    localStorage.setItem('eldiario_issue', String(issueCount));
     document.getElementById('hdr-date').textContent = todayStr();
-    document.getElementById('hdr-issue').textContent = `Issue No. ${String(issueCount).padStart(3,'0')}`;
-    document.getElementById('gen-info').textContent = `Last generated: ${new Date().toLocaleTimeString()}`;
+    document.getElementById('hdr-issue').textContent = 'Issue No. ' + String(issueCount).padStart(3, '0');
+    document.getElementById('gen-info').textContent = 'Last generated: ' + new Date().toLocaleTimeString();
     document.getElementById('gen-btn').disabled = false;
 
     render(d);
-
     document.getElementById('loading').style.display = 'none';
     document.getElementById('content').style.display = 'block';
 
@@ -574,174 +329,159 @@ Generate a COMPLETE newsletter. Return ONLY valid JSON — no markdown fences, n
     clearInterval(ticker);
     document.getElementById('loading').style.display = 'none';
     document.getElementById('gen-btn').disabled = false;
-    document.getElementById('gen-info').textContent = 'Error — try again';
 
-    // Show error in gate or inline
-    if (e.message.includes('auth') || e.message.includes('API key') || e.message.includes('401')) {
-      localStorage.removeItem('eldiario_key');
-      document.getElementById('gate-error').textContent = '⚠ Invalid API key. Please check and try again.';
+    if (e.message && e.message.indexOf('INVALID_KEY') === 0) {
+      localStorage.removeItem('eldiario_gemini_key');
+      document.getElementById('gate-error').textContent = 'Invalid API key — please check and try again.';
       document.getElementById('gate').style.display = 'flex';
+      document.getElementById('gen-info').textContent = 'Enter your free Gemini API key to begin';
     } else {
-      document.getElementById('content').innerHTML = `
-        <div style="background:var(--rust);color:var(--cream);padding:1.5rem;margin-top:2rem;font-size:0.9rem;line-height:1.6;text-align:center">
-          <strong style="font-family:'Syne',sans-serif;font-size:1.1rem;display:block;margin-bottom:0.4rem">Couldn't generate edition</strong>
-          ${e.message}<br><br>
-          <span style="font-size:0.78rem;opacity:0.8">Press the generate button to try again.</span>
-        </div>`;
+      document.getElementById('content').innerHTML =
+        '<div style="background:var(--rust);color:var(--cream);padding:1.5rem;margin-top:2rem;font-size:0.9rem;line-height:1.6;text-align:center">'
+        + '<strong style="font-family:\'Syne\',sans-serif;font-size:1.1rem;display:block;margin-bottom:0.4rem">Couldn\'t generate edition</strong>'
+        + esc(e.message)
+        + '<br><br><span style="font-size:0.78rem;opacity:0.8">Press the generate button to try again.</span></div>';
       document.getElementById('content').style.display = 'block';
+      document.getElementById('gen-info').textContent = 'Error — try again';
     }
   }
 }
 
 function render(d) {
   quizCorrect = d.quiz.correctIndex;
-  quizFeedbackGood = d.quiz.feedbackCorrect;
-  quizFeedbackBad = d.quiz.feedbackWrong;
+  quizFbGood  = d.quiz.feedbackCorrect;
+  quizFbBad   = d.quiz.feedbackWrong;
 
-  const exRows = d.grammar.examples.map(ex =>
-    `<span class="es-ex">${esc(ex.es)}</span><span class="en-ex">${esc(ex.en)}</span>`
-  ).join('');
+  var exRows = d.grammar.examples.map(function(ex) {
+    return '<span class="es-ex">' + esc(ex.es) + '</span><span class="en-ex">' + esc(ex.en) + '</span>';
+  }).join('');
 
-  const chips = d.music.chips.map(c => `<span class="chip">${esc(c)}</span>`).join('');
+  var chips = d.music.chips.map(function(c) {
+    return '<span class="chip">' + esc(c) + '</span>';
+  }).join('');
 
-  const spots = d.music.spotlights.map((s, i) => `
-    ${i > 0 ? '<hr class="sdiv">' : ''}
-    <div class="s-name">${esc(s.artist)}</div>
-    <div class="s-blurb">${esc(s.blurb)}</div>
-  `).join('');
+  var spots = d.music.spotlights.map(function(s, i) {
+    return (i > 0 ? '<hr class="sdiv">' : '') +
+      '<div class="s-name">' + esc(s.artist) + '</div>' +
+      '<div class="s-blurb">' + esc(s.blurb) + '</div>';
+  }).join('');
 
-  const sciVocab = d.science.vocabItems.map((v, i) =>
-    `<span><strong>${esc(v.word)}</strong> — ${esc(v.meaning)}</span>${i < d.science.vocabItems.length - 1 ? ' &nbsp;·&nbsp; ' : ''}`
-  ).join('');
+  var sciVocab = d.science.vocabItems.map(function(v, i) {
+    return '<span><strong>' + esc(v.word) + '</strong> — ' + esc(v.meaning) + '</span>'
+      + (i < d.science.vocabItems.length - 1 ? ' &nbsp;·&nbsp; ' : '');
+  }).join('');
 
-  const phrases = d.games.phrases.map(p => `
-    <div class="phrase-row">
-      <span class="phrase-es">${esc(p.es)}</span>
-      <span class="phrase-en">${esc(p.en)}</span>
-    </div>`).join('');
+  var phrases = d.games.phrases.map(function(p) {
+    return '<div class="phrase-row"><span class="phrase-es">' + esc(p.es) + '</span><span class="phrase-en">' + esc(p.en) + '</span></div>';
+  }).join('');
 
-  const quizOpts = d.quiz.options.map((opt, i) =>
-    `<button class="quiz-btn" onclick="checkAnswer(this,${i})">${esc(opt)}</button>`
-  ).join('');
+  var quizOpts = d.quiz.options.map(function(opt, i) {
+    return '<button class="quiz-btn" onclick="checkAnswer(this,' + i + ')">' + esc(opt) + '</button>';
+  }).join('');
 
-  const grammarRule = esc(d.grammar.rule).replace(/`([^`]+)`/g, '<code>$1</code>');
+  var grammarRule = esc(d.grammar.rule).replace(/`([^`]+)`/g, '<code>$1</code>');
 
-  document.getElementById('content').innerHTML = `
+  document.getElementById('content').innerHTML =
+    '<div class="section">' +
+      '<div class="section-label"><span>📖</span> Palabra del Día</div>' +
+      '<div class="wod-card">' +
+        '<div class="wod-pron">' + esc(d.word.pronunciation) + '</div>' +
+        '<div class="wod-word">' + esc(d.word.spanish) + '</div>' +
+        '<div class="wod-pos">' + esc(d.word.partOfSpeech) + '</div>' +
+        '<div class="wod-def"><strong>' + esc(d.word.englishMeaning) + '</strong> — ' + esc(d.word.definition) + '</div>' +
+        '<div class="wod-ex"><em>' + esc(d.word.exampleSpanish) + '</em>' +
+          '<div class="wod-tr">→ "' + esc(d.word.exampleEnglish) + '"</div></div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- WORD -->
-    <div class="section">
-      <div class="section-label"><span>📖</span> Palabra del Día</div>
-      <div class="wod-card">
-        <div class="wod-pron">${esc(d.word.pronunciation)}</div>
-        <div class="wod-word">${esc(d.word.spanish)}</div>
-        <div class="wod-pos">${esc(d.word.partOfSpeech)}</div>
-        <div class="wod-def"><strong>${esc(d.word.englishMeaning)}</strong> — ${esc(d.word.definition)}</div>
-        <div class="wod-ex">
-          <em>${esc(d.word.exampleSpanish)}</em>
-          <div class="wod-tr">→ "${esc(d.word.exampleEnglish)}"</div>
-        </div>
-      </div>
-    </div>
+    '<div class="section">' +
+      '<div class="section-label"><span>✍️</span> Gramática Rápida</div>' +
+      '<div class="grammar-box">' +
+        '<div class="grammar-title">' + esc(d.grammar.title) + '</div>' +
+        '<div class="grammar-rule">' + grammarRule + '</div>' +
+        '<div class="example-grid">' + exRows + '</div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- GRAMMAR -->
-    <div class="section">
-      <div class="section-label"><span>✍️</span> Gramática Rápida</div>
-      <div class="grammar-box">
-        <div class="grammar-title">${esc(d.grammar.title)}</div>
-        <div class="grammar-rule">${grammarRule}</div>
-        <div class="example-grid">${exRows}</div>
-      </div>
-    </div>
+    '<div class="section">' +
+      '<div class="section-label"><span>🎵</span> Música Latina</div>' +
+      '<div class="music-grid">' +
+        '<div>' +
+          '<div class="music-hed">' + esc(d.music.headline) + '</div>' +
+          '<div class="music-body">' + esc(d.music.body1) + '</div>' +
+          '<div class="music-body">' + esc(d.music.body2) + '</div>' +
+          '<div class="chips">' + chips + '</div>' +
+        '</div>' +
+        '<div class="music-sidebar">' +
+          '<div class="sidebar-lbl">Also Buzzing</div>' + spots +
+        '</div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- MUSIC -->
-    <div class="section">
-      <div class="section-label"><span>🎵</span> Música Latina</div>
-      <div class="music-grid">
-        <div>
-          <div class="music-hed">${esc(d.music.headline)}</div>
-          <div class="music-body">${esc(d.music.body1)}</div>
-          <div class="music-body">${esc(d.music.body2)}</div>
-          <div class="chips">${chips}</div>
-        </div>
-        <div class="music-sidebar">
-          <div class="sidebar-lbl">Also Buzzing</div>
-          ${spots}
-        </div>
-      </div>
-    </div>
+    '<div class="section">' +
+      '<div class="section-label"><span>🗺️</span> Ciencia & Geografía</div>' +
+      '<div class="map-card">' +
+        '<div class="map-hed">' + esc(d.science.headline) + '</div>' +
+        '<div class="map-body">' + esc(d.science.body1) + '</div>' +
+        '<div class="map-body" style="margin-top:0.8rem">' + esc(d.science.body2) + '</div>' +
+        '<div class="map-vocab-box">' +
+          '<div class="map-vocab-title">🌿 Vocabulary</div>' +
+          '<div class="map-vocab-list">' + sciVocab + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- SCIENCE -->
-    <div class="section">
-      <div class="section-label"><span>🗺️</span> Ciencia & Geografía</div>
-      <div class="map-card">
-        <div class="map-hed">${esc(d.science.headline)}</div>
-        <div class="map-body">${esc(d.science.body1)}</div>
-        <div class="map-body" style="margin-top:0.8rem">${esc(d.science.body2)}</div>
-        <div class="map-vocab-box">
-          <div class="map-vocab-title">🌿 Vocabulary</div>
-          <div class="map-vocab-list">${sciVocab}</div>
-        </div>
-      </div>
-    </div>
+    '<div class="section">' +
+      '<div class="section-label"><span>🎮</span> Videojuegos en Español</div>' +
+      '<div class="game-card">' +
+        '<div class="game-hed">' + esc(d.games.headline) + '</div>' +
+        '<div class="game-body">' + esc(d.games.body1) + '</div>' +
+        '<div class="game-body">' + esc(d.games.body2) + '</div>' +
+        '<div class="phrase-box">' +
+          '<div class="phrase-box-title">Frases para el juego</div>' + phrases +
+        '</div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- GAMES -->
-    <div class="section">
-      <div class="section-label"><span>🎮</span> Videojuegos en Español</div>
-      <div class="game-card">
-        <div class="game-hed">${esc(d.games.headline)}</div>
-        <div class="game-body">${esc(d.games.body1)}</div>
-        <div class="game-body">${esc(d.games.body2)}</div>
-        <div class="phrase-box">
-          <div class="phrase-box-title">Frases para el juego</div>
-          ${phrases}
-        </div>
-      </div>
-    </div>
+    '<div class="section" style="border-bottom:none">' +
+      '<div class="section-label"><span>✏️</span> Mini Quiz — ¡A Practicar!</div>' +
+      '<div class="quiz-wrap">' +
+        '<div class="quiz-title">¿Cuánto aprendiste hoy?</div>' +
+        '<div class="quiz-q">' + esc(d.quiz.question) + '</div>' +
+        '<div class="quiz-opts" id="qopts">' + quizOpts + '</div>' +
+        '<div class="quiz-fb" id="qfb"></div>' +
+      '</div>' +
+    '</div>' +
 
-    <!-- QUIZ -->
-    <div class="section" style="border-bottom:none">
-      <div class="section-label"><span>✏️</span> Mini Quiz — ¡A Practicar!</div>
-      <div class="quiz-wrap">
-        <div class="quiz-title">¿Cuánto aprendiste hoy?</div>
-        <div class="quiz-q">${esc(d.quiz.question)}</div>
-        <div class="quiz-opts" id="qopts">${quizOpts}</div>
-        <div class="quiz-fb" id="qfb"></div>
-      </div>
-    </div>
+    '<div class="teaser">' + esc(d.tomorrowTeaser) + '</div>' +
 
-    <div class="teaser">${esc(d.tomorrowTeaser)}</div>
-
-    <footer class="footer" style="margin-top:1.5rem">
-      <div class="footer-title">El Diario</div>
-      <p>Daily Spanish companion · Issue ${String(issueCount).padStart(3,'0')} · ${todayStr()}</p>
-    </footer>
-  `;
+    '<footer class="footer" style="margin-top:1.5rem">' +
+      '<div class="footer-title">El Diario</div>' +
+      '<p>Daily Spanish companion · Issue ' + String(issueCount).padStart(3,'0') + ' · ' + todayStr() + '</p>' +
+      '<p style="margin-top:0.3rem">Powered by Gemini <span class="badge">FREE</span></p>' +
+    '</footer>';
 }
 
 function checkAnswer(btn, idx) {
   if (quizAnswered) return;
   quizAnswered = true;
-  document.querySelectorAll('.quiz-btn').forEach((b, i) => {
+  document.querySelectorAll('.quiz-btn').forEach(function(b, i) {
     b.disabled = true;
     if (i === quizCorrect) b.classList.add('correct');
   });
   if (idx !== quizCorrect) btn.classList.add('wrong');
-  const isRight = idx === quizCorrect;
-  document.getElementById('qfb').textContent = isRight
-    ? '✅ ' + quizFeedbackGood
-    : '❌ ' + quizFeedbackBad;
+  document.getElementById('qfb').textContent =
+    idx === quizCorrect ? '✅ ' + quizFbGood : '❌ ' + quizFbBad;
 }
 
 function esc(str) {
   if (!str) return '';
   return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
 }
-
-function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 </script>
 </body>
 </html>
